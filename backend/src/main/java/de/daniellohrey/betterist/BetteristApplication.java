@@ -10,4 +10,5 @@ public class BetteristApplication {
         SpringApplication.run(BetteristApplication.class, args);
     }
 
+
 }
