@@ -21,9 +21,10 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
+import static org.assertj.core.internal.bytebuddy.matcher.ElementMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.arrayContainingInAnyOrder;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -37,6 +38,8 @@ class ProductControllerTest {
 
     @Autowired
     private ProductMongoDb productMongoDb;
+
+    @Autowired
     private UserProductMongoDb userProductMongoDb;
 
     @BeforeEach
@@ -86,31 +89,39 @@ class ProductControllerTest {
  /*   @Test
     @DisplayName("Post a Product to the UserProductMongoDb")
     public void postProductToTheUserMongoDb(){
-        //Given
-        List<Product> productList = List.of(
-                Product.builder()._id("Kartoffel").product_name("800").build(),
-                Product.builder()._id("Salz").product_name("1").build()
-        );
-
-        DbProduct dbProduct= DbProduct.builder()
-                ._id("12345")
-                .product_name("Müsliriegel")
-                .build();
-        userProductMongoDb.save(dbProduct);
-
-        //When
-        HttpEntity<DbProduct> postEntity = new HttpEntity<>(dbProduct);
-        ResponseEntity<Product> response = testRestTemplate.postForEntity(getUrl(),postEntity,Product.class);
-
-        //Then
-        Product expected = Product.builder()
-                ._id("12345")
-                .product_name("Müsliriegel")
+        //GIVEN
+        String id = "2345";
+        String productName = "Milka";
+        DbProduct dbProduct = DbProduct.builder()
+                ._id(id)
+                .product_name(productName)
                 .build();
 
-        assertThat(response.getStatusCode(), Matchers.is(HttpStatus.OK));
-        assertThat(response.getBody(), Matchers.is(expected));
-        assertTrue(userProductMongoDb.existsById(response.getBody().get_id()));
+        //WHEN
+        HttpEntity<DbProduct> entity = new HttpEntity<>(dbProduct);
+        ResponseEntity<Product> response = testRestTemplate.postForEntity(getUrl(), entity, Product.class);
+        //THEN
+        assertThat(response.getStatusCode(), is(HttpStatus.OK));
+        assertThat(response.getBody(), is(Product.builder()
+                ._id(id)
+                .product_name(productNam)
+                .build()));
+        assertTrue(userProductMongoDb.existsById(id));
+    }*/
+
+  /*  @Test
+    @DisplayName("DELETE to /api/products/id deletes the product")
+    public void deleteCourse() {
+        //GIVEN
+        userProductMongoDb.save(DbProduct.builder()
+                ._id("001")
+                .product_name("Apfel")
+                .build();
+        //WHEN
+        testRestTemplate.delete(getUrl() + "/001");
+        //THEN
+        assertThat(userProductMongoDb.existsById("001"), is(false));
     }
 */
+
 }

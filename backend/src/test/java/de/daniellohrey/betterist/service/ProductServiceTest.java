@@ -2,10 +2,13 @@ package de.daniellohrey.betterist.service;
 
 import de.daniellohrey.betterist.db.ProductMongoDb;
 import de.daniellohrey.betterist.db.UserProductMongoDb;
+import de.daniellohrey.betterist.dto.ProductDto;
+import de.daniellohrey.betterist.model.DbProduct;
 import de.daniellohrey.betterist.model.Product;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.http.HttpEntity;
 
 import java.util.List;
 import java.util.Optional;
@@ -56,23 +59,31 @@ class ProductServiceTest {
                         .build()));
     }
 
- /*   @DisplayName("A not existing product should be added to db")
-    public void testAddNotExistingProduct() {
+  /*  @Test
+    @DisplayName("Add method should a add a route object to route List and return the added route")
+    void addRouteTest() {
         //GIVEN
-        Optional<Product> optionalOfProductToAdd = Optional.of(Product.builder()
-                        ._id("12345")
-                        .product_name("Product1")
-                        .brands("Milbona")
-                        .build());
+        ProductDto productDto = ProductDto.builder()
+                ._id("001")
+                .product_name("Apfel")
+                .build();
 
-        when(userProductMongoDb.existsById(optionalOfProductToAdd.get().get_id())).thenReturn(false);
 
         //WHEN
-        Optional<Product> actual = productService.addProduct(optionalOfProductToAdd.get());
+        Product addedProduct = productService.addProduct(productDto);
+
 
         //THEN
-        verify(userProductMongoDb).save(optionalOfProductToAdd.get());
-        assertTrue(actual.isPresent());
-        assertThat(actual, Matchers.is(optionalOfProductToAdd));
-    } */
+        Product expectedProduct = Product.builder()
+                ._id("001")
+                .product_name("Apfel")
+                .build();
+
+        assertThat(addedProduct, is(expectedProduct));
+        verify(userProductMongoDb).save(expectedProduct);
+
+    }
+
+
+*/
 }

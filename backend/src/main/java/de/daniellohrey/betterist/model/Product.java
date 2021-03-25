@@ -29,7 +29,6 @@ public class Product {
     private String nutriscore_grade;
     private String nova_group;
     private Nutriments nutriments;
-    private String image_front_thumb_url;
     private String ingredients_text_de;
     private String quantity;
     private List<String> _keywords;
