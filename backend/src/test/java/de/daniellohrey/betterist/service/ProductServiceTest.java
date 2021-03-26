@@ -2,8 +2,6 @@ package de.daniellohrey.betterist.service;
 
 import de.daniellohrey.betterist.db.ProductMongoDb;
 import de.daniellohrey.betterist.db.UserProductMongoDb;
-import de.daniellohrey.betterist.dto.ProductDto;
-import de.daniellohrey.betterist.model.DbProduct;
 import de.daniellohrey.betterist.model.Product;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
@@ -30,6 +28,13 @@ class ProductServiceTest {
     private final ProductMongoDb productMongoDb = mock(ProductMongoDb.class);
     private UserProductMongoDb userProductMongoDb = mock(UserProductMongoDb.class);
     private final ProductService productService = new ProductService(productMongoDb, userProductMongoDb);
+
+    private Product createProduct() {
+        return Product.builder()
+                ._id("/&123")
+                .product_name("Jump & Leaps")
+                .build();
+    }
 
     @Test
     @DisplayName("List Products should return list from DB")
@@ -65,6 +70,21 @@ class ProductServiceTest {
     }
 
 
+    @Test
+    @DisplayName("getProductId should return group by Id")
+    public void getProductById() {
+
+        //Given
+        String id = "/&123";
+        when(productMongoDb.findById(id)).thenReturn(
+                Optional.of(createProduct()));
+
+        //When
+        Optional<Product> result = productService.getProductById(id);
+
+        //Then
+        assertThat(result.get(), is(createProduct()));
+    }
 
 
     /*  @Test
@@ -94,13 +114,14 @@ class ProductServiceTest {
 
     } */
 
-      @Test
-    @DisplayName("DeleteCourse deletes course from db ")
-    public void deleteFromDb(){
+    @Test
+    @DisplayName("DeleteProducts deletes course from db ")
+    public void deleteFromUserMongoDump(){
         //WHEN
         productService.deleteProduct("123");
 
         //THEN
         verify(userProductMongoDb).deleteById("123");
     }
+
 }

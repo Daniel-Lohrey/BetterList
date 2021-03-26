@@ -16,5 +16,6 @@ public class Nutriments {
 
     private String energy_serving;
     private String carbohydrates;
+    //not completely atm
 
 }

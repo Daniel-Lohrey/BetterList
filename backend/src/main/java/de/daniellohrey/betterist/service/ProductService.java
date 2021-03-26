@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.List;
-
+import java.util.Optional;
 
 
 @Service
@@ -32,8 +32,8 @@ public class ProductService {
     }
 
 
-    public Product getProductById (String id) {
-        return productMongoDb.findById(id).get();
+    public Optional<Product> getProductById (String id) {
+        return productMongoDb.findById(id);
     }
 
     public Product addProduct(ProductDto productDto){

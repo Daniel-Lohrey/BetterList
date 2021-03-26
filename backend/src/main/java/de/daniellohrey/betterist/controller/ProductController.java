@@ -10,6 +10,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -29,9 +30,9 @@ public class ProductController {
     }
 
     @GetMapping("{id}")
-    public Product findProductById(@PathVariable String id) {
+    public Optional<Product> findProductById(@PathVariable String id) {
         return productService.getProductById(id);
-                 //.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product could not be found"));
+                // .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product could not be found"));
     }
 
     @PostMapping

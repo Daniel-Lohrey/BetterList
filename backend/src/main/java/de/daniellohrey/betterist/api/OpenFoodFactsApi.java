@@ -22,7 +22,7 @@ import java.util.List;
 @Service
 public class OpenFoodFactsApi {
 
-    // Klasse und Methoden können vorerst ignoriert werden !!!!
+    // Klasse/Methoden können vorerst ignoriert werden
 
 /*
         private final IdUtils idUtils;
