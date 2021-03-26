@@ -42,8 +42,8 @@ public class ProductService {
         return product;
     }
 
-    public void deleteProduct(String _id) {
-         userProductMongoDb.deleteById(_id);
+    public void deleteProduct(String id) {
+         userProductMongoDb.deleteById(id);
     }
 
 
