@@ -54,13 +54,14 @@ class ProductControllerTest {
     @Test
     @DisplayName("Get api/product should return a list of products")
     public void getMappingShouldReturnListOfProducts() {
+        //Given
         productMongoDb.save(Product.builder()
-                ._id("12345")
+                .id("12345")
                 .product_name("Product1")
                 .brands("Milbona")
                 .build());
         productMongoDb.save(Product.builder()
-                ._id("0001")
+                .id("0001")
                 .product_name("Product2")
                 .brands("Milka")
                 .build());
@@ -73,12 +74,12 @@ class ProductControllerTest {
         assertThat(response.getStatusCode(), Matchers.is(HttpStatus.OK));
         assertThat(response.getBody(), arrayContainingInAnyOrder(
                 Product.builder()
-                        ._id("12345")
+                        .id("12345")
                         .product_name("Product1")
                         .brands("Milbona")
                         .build(),
                 Product.builder()
-                        ._id("0001")
+                        .id("0001")
                         .product_name("Product2")
                         .brands("Milka")
                         .build()));
@@ -90,7 +91,7 @@ class ProductControllerTest {
     public void postProductToTheUserMongoDb(){
         //GIVEN
         DbProduct dbProduct = DbProduct.builder()
-                ._id("122")
+                .id("122")
                 .product_name("productName")
                 .build();
 
@@ -100,7 +101,7 @@ class ProductControllerTest {
         //THEN
         assertThat(response.getStatusCode(), is(HttpStatus.OK));
         assertThat(response.getBody(), is(Product.builder()
-                ._id("122")
+                .id("122")
                 .product_name("productName")
                 .build()));
         assertTrue(userProductMongoDb.existsById("122"));
@@ -112,13 +113,13 @@ class ProductControllerTest {
     public void deleteCourse() {
         //GIVEN
         userProductMongoDb.save(DbProduct.builder()
-                ._id("001")
+                .id("001")
                 .product_name("Apfel")
                 .build());
         //WHEN
         testRestTemplate.delete(getUrl() + "/001");
         //THEN
-        assertThat(userProductMongoDb.existsById("001"), is(false));
+        assertFalse(userProductMongoDb.existsById("001"));
     }
 
 

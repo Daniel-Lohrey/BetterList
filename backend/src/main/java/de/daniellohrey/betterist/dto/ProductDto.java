@@ -13,17 +13,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Document(collection = "userProducts")
 
 
 public class ProductDto {
 
-    private String _id;
+    private String id;
     private String product_name;
 
     public Product toProduct(){
         return Product.builder()
-                ._id(_id)
+                .id(id)
                 .product_name(product_name)
                 .build();
     }

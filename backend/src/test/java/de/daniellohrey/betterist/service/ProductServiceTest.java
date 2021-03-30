@@ -31,7 +31,7 @@ class ProductServiceTest {
 
     private Product createProduct() {
         return Product.builder()
-                ._id("/&123")
+                .id("/&123")
                 .product_name("Jump & Leaps")
                 .build();
     }
@@ -42,12 +42,12 @@ class ProductServiceTest {
         //GIVEN
         when(productMongoDb.findAll()).thenReturn(List.of(
                 Product.builder()
-                        ._id("12345")
+                        .id("12345")
                         .product_name("Product1")
                         .brands("Milbona")
                         .build(),
                 Product.builder()
-                        ._id("0001")
+                        .id("0001")
                         .product_name("Product2")
                         .brands("Milka")
                         .build())
@@ -58,12 +58,12 @@ class ProductServiceTest {
         //THEN
         assertThat(products, containsInAnyOrder(
                 Product.builder()
-                        ._id("12345")
+                        .id("12345")
                         .product_name("Product1")
                         .brands("Milbona")
                         .build(),
                 Product.builder()
-                        ._id("0001")
+                        .id("0001")
                         .product_name("Product2")
                         .brands("Milka")
                         .build()));
@@ -71,7 +71,7 @@ class ProductServiceTest {
 
 
     @Test
-    @DisplayName("getProductId should return group by Id")
+    @DisplayName("getProductById should return product by Id")
     public void getProductById() {
 
         //Given
