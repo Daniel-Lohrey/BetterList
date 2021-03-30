@@ -1,31 +1,32 @@
 import { useState } from 'react'
 import styled from 'styled-components/macro'
 
-export default function AddButton({ onAdd }) {
-    const [productName, setProductName] = useState('')
+export default function AddProduct({ onAdd }) {
+    const [product, setProduct] = useState('')
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        if (!productName) {
+        if (!product) {
             return
         }
-        onAdd(productName)
-        setProductName('')
+        onAdd(product)
+        setProduct('')
     }
 
     return (
         <Form onSubmit={handleSubmit}>
             <input
                 type="text"
-                value={productName}
-                onChange={({ target }) => setProductName(target.value)}
+                value={product}
+                onChange={({ target }) => setProduct(target.value)}
             />
-            <button disabled={!productName} type="submit">
-                Add
+            <button disabled={!product} type="submit">
+                Search
             </button>
         </Form>
     )
 }
+
 
 const Form = styled.form`
   display: flex;

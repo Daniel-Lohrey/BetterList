@@ -6,4 +6,4 @@ export const getProducts = (id) =>
     axios.get(`${productUrl}/${id}`).then(response => response.data)
 
 export const getProductsByKeywords = (keywords) =>
-    axios.get(`${BaseUrl}/search/${keywords}`).then(response => response.data)
+    axios.get(`${productUrl}/search/${keywords}`).then(response => response.data)

@@ -11,6 +11,7 @@ export default function AppHeader() {
 const Header = styled.header`
   background: var(--primary-color);
   box-shadow: 0px 2px 4px #333;
+  c
   h1 {
     padding: 8px;
     margin: 0px;

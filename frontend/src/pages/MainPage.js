@@ -1,15 +1,15 @@
-import AppHeader from "./AppHeader";
-import SearchProduct from "./SearchProduct";
+import AppHeader from "../components/AppHeader";
+import AddProduct from "../components/AddProduct";
+import ProductList from "../components/ProductList";
 
 
 export default function MainPage() {
 
     return (
         <>
-
                 <AppHeader />
-                <SearchProduct></SearchProduct>
-
+                <AddProduct />
+                <ProductList />
 
         </>
     )
