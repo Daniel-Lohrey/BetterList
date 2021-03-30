@@ -22,7 +22,7 @@ import java.util.List;
 public class Product {
 
     @Id
-    private String _id;
+    private String id;
     private String product_name;
     private String product_name_de;
     private String brands;
@@ -39,7 +39,7 @@ public class Product {
 
     public DbProduct toDbProduct(){
         return DbProduct.builder()
-                ._id(_id)
+                .id(id)
                 .product_name(product_name)
                 .build();
     }

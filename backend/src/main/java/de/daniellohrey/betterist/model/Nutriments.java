@@ -1,5 +1,6 @@
 package de.daniellohrey.betterist.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,8 +15,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 public class Nutriments {
 
+
     private String energy_serving;
     private String carbohydrates;
-    //not completely atm
+
 
 }
