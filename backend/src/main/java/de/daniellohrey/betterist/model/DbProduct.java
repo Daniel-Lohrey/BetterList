@@ -1,5 +1,6 @@
 package de.daniellohrey.betterist.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,6 +16,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class DbProduct {
 
     private String id;
-    private String product_name;
+    @JsonProperty("product_name")
+    private String name;
 
 }

@@ -1,6 +1,7 @@
 package de.daniellohrey.betterist.dto;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import de.daniellohrey.betterist.model.Product;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,12 +19,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ProductDto {
 
     private String id;
-    private String product_name;
+    @JsonProperty("product_name")
+    private String name;
 
     public Product toProduct(){
         return Product.builder()
                 .id(id)
-                .product_name(product_name)
+                .name(name)
                 .build();
     }
 
