@@ -32,7 +32,7 @@ class ProductServiceTest {
     private Product createProduct() {
         return Product.builder()
                 .id("/&123")
-                .product_name("Jump & Leaps")
+                .name("Jump & Leaps")
                 .build();
     }
 
@@ -43,12 +43,12 @@ class ProductServiceTest {
         when(productMongoDb.findAll()).thenReturn(List.of(
                 Product.builder()
                         .id("12345")
-                        .product_name("Product1")
+                        .name("Product1")
                         .brands("Milbona")
                         .build(),
                 Product.builder()
                         .id("0001")
-                        .product_name("Product2")
+                        .name("Product2")
                         .brands("Milka")
                         .build())
         );
@@ -59,12 +59,12 @@ class ProductServiceTest {
         assertThat(products, containsInAnyOrder(
                 Product.builder()
                         .id("12345")
-                        .product_name("Product1")
+                        .name("Product1")
                         .brands("Milbona")
                         .build(),
                 Product.builder()
                         .id("0001")
-                        .product_name("Product2")
+                        .name("Product2")
                         .brands("Milka")
                         .build()));
     }
