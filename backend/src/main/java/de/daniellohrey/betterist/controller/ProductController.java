@@ -53,11 +53,5 @@ public class ProductController {
         return productService.getProductByKeywords(keywords,id);
     }
 
-   /* @GetMapping("{searchTerm}")
-    public List<Product> getProductsListBySearchTerm(@PathVariable String searchTerm){
-        return productService.getProductsBySearchTerms(searchTerm);
-    } */
-
-
 
 }
