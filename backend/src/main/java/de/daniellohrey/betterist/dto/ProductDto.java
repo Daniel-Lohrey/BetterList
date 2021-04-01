@@ -21,11 +21,13 @@ public class ProductDto {
     private String id;
     @JsonProperty("product_name")
     private String name;
+    private String brands;
 
     public Product toProduct(){
         return Product.builder()
                 .id(id)
                 .product_name(name)
+                .brands(brands)
                 .build();
     }
 

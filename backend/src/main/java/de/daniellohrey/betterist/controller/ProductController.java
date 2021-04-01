@@ -26,7 +26,7 @@ public class ProductController {
     }
 
     @GetMapping
-    public List<DbProduct> UserProductsList() {
+    public List<DbProduct> getUserProductsList() {
         return productService.listProducts();
     }
 
