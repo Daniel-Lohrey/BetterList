@@ -23,8 +23,7 @@ public class Product {
 
     @Id
     private String id;
-    @JsonProperty("product_name")
-    private String name;
+    private String product_name;
     private String product_name_de;
     private String brands;
     private String nutriscore_grade;
@@ -41,7 +40,7 @@ public class Product {
     public DbProduct toDbProduct(){
         return DbProduct.builder()
                 .id(id)
-                .name(name)
+                .product_name(product_name)
                 .build();
     }
 

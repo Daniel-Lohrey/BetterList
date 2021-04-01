@@ -57,12 +57,12 @@ class ProductControllerTest {
         //Given
         productMongoDb.save(Product.builder()
                 .id("12345")
-                .name("Product1")
+                .product_name("Product1")
                 .brands("Milbona")
                 .build());
         productMongoDb.save(Product.builder()
                 .id("0001")
-                .name("Product2")
+                .product_name("Product2")
                 .brands("Milka")
                 .build());
 
@@ -75,12 +75,12 @@ class ProductControllerTest {
         assertThat(response.getBody(), arrayContainingInAnyOrder(
                 Product.builder()
                         .id("12345")
-                        .name("Product1")
+                        .product_name("Product1")
                         .brands("Milbona")
                         .build(),
                 Product.builder()
                         .id("0001")
-                        .name("Product2")
+                        .product_name("Product2")
                         .brands("Milka")
                         .build()));
 
@@ -92,7 +92,7 @@ class ProductControllerTest {
         //GIVEN
         DbProduct dbProduct = DbProduct.builder()
                 .id("122")
-                .name("productName")
+                .product_name("productName")
                 .build();
 
         //WHEN
@@ -102,7 +102,7 @@ class ProductControllerTest {
         assertThat(response.getStatusCode(), is(HttpStatus.OK));
         assertThat(response.getBody(), is(Product.builder()
                 .id("122")
-                .name("productName")
+                .product_name("productName")
                 .build()));
         assertTrue(userProductMongoDb.existsById("122"));
     }
@@ -114,7 +114,7 @@ class ProductControllerTest {
         //GIVEN
         userProductMongoDb.save(DbProduct.builder()
                 .id("001")
-                .name("Apfel")
+                .product_name("Apfel")
                 .build());
         //WHEN
         testRestTemplate.delete(getUrl() + "/001");

@@ -16,7 +16,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class DbProduct {
 
     private String id;
-    @JsonProperty("product_name")
-    private String name;
+    private String product_name;
 
 }

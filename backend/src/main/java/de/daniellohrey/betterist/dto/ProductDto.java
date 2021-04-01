@@ -25,7 +25,7 @@ public class ProductDto {
     public Product toProduct(){
         return Product.builder()
                 .id(id)
-                .name(name)
+                .product_name(name)
                 .build();
     }
 
