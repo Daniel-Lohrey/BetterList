@@ -19,14 +19,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ProductDto {
 
     private String id;
-    @JsonProperty("product_name")
-    private String name;
+    private String product_name;
     private String brands;
 
     public Product toProduct(){
         return Product.builder()
                 .id(id)
-                .product_name(name)
+                .product_name(product_name)
                 .brands(brands)
                 .build();
     }
