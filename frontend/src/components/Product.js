@@ -1,13 +1,13 @@
 import styled from "styled-components/macro";
 import {Card, CardContent, Typography} from "@material-ui/core";
 
-export default function Products({product}) {
+export default function Product({product}) {
     return (
-        <ListItem key={product.id}>
+        <ListItem >
             <Card style={cardStyle}>
                 <CardContent>
                     <CardContentOrder>
-                        <Typography>{product.name}</Typography>
+                        <Typography>{product.product_name}</Typography>
                     </CardContentOrder>
                 </CardContent>
             </Card>
@@ -25,6 +25,6 @@ const CardContentOrder = styled.div`
 
 const cardStyle = {
     backgroundColor: "var(--backgroundColorPrimary)",
-    borderColor: "var(--borderColor)",
-    borderStyle: "solid"
+    borderColor: "var(--text-color, beige)",
+    borderStyle: "double"
 }

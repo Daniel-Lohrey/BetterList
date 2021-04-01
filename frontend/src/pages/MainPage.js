@@ -1,6 +1,6 @@
 import AppHeader from "../components/AppHeader";
 import AddProduct from "../components/AddProduct";
-import ProductList from "../components/ProductList";
+import SearchProducts from "../components/SearchProducts";
 
 
 export default function MainPage() {
@@ -9,7 +9,7 @@ export default function MainPage() {
         <>
                 <AppHeader />
                 <AddProduct />
-                <ProductList />
+                <SearchProducts />
 
         </>
     )

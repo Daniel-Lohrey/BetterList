@@ -2,25 +2,25 @@ import { useState } from 'react'
 import styled from 'styled-components/macro'
 
 export default function AddProduct({ onAdd }) {
-    const [product, setProduct] = useState('')
+    const [products, setProducts] = useState('')
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        if (!product) {
+        if (!products) {
             return
         }
-        onAdd(product)
-        setProduct('')
+        onAdd(products)
+        setProducts('')
     }
 
     return (
         <Form onSubmit={handleSubmit}>
             <input
                 type="text"
-                value={product}
-                onChange={({ target }) => setProduct(target.value)}
+                value={products}
+                onChange={({ target }) => setProducts(target.value)}
             />
-            <button disabled={!product} type="submit">
+            <button disabled={!products} type="submit">
                 Search
             </button>
         </Form>

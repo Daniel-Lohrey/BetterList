@@ -1,34 +1,39 @@
-
-import {useEffect, useState} from "react";
-import {getProducts} from "./service/ApiService";
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
-import ProductList from "./components/ProductList";
 import AppHeader from "./components/AppHeader";
+import SearchProducts from "./components/SearchProducts";
+import {useEffect, useState} from "react";
+import {getUserProductsList} from "./service/ApiService";
+import ProductList from "./components/ProductList";
+
+
 
 
 function App() {
-  const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState([])
 
-
-  useEffect(() => {
-        getProducts()
+    useEffect(() => {
+        getUserProductsList()
             .then(setProducts)
             .catch((error) => console.error(error))
-      },
-      [])
+    }, [])
+
+
 
   return (
       <Router>
           <AppHeader />
           <Switch>
               <Route exact path="/">
-              </Route>
-              <Route path="/products">
+                  <SearchProducts setProducts={setProducts} products={products}/>
                   <ProductList products={products}/>
+              </Route>
+              <Route path="/productDetails">
               </Route>
           </Switch>
       </Router>
+
   )
+
 }
 
 export default App;
