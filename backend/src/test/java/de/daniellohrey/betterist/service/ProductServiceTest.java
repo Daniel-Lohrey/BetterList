@@ -2,6 +2,7 @@ package de.daniellohrey.betterist.service;
 
 import de.daniellohrey.betterist.db.ProductMongoDb;
 import de.daniellohrey.betterist.db.UserProductMongoDb;
+import de.daniellohrey.betterist.model.DbProduct;
 import de.daniellohrey.betterist.model.Product;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
@@ -53,7 +54,7 @@ class ProductServiceTest {
                         .build())
         );
         //WHEN
-        List<Product> products = productService.listProducts();
+        List<DbProduct> products = productService.listProducts();
 
         //THEN
         assertThat(products, containsInAnyOrder(

@@ -17,5 +17,6 @@ public class DbProduct {
 
     private String id;
     private String product_name;
+    private String brands;
 
 }

@@ -3,6 +3,7 @@ package de.daniellohrey.betterist.service;
 import de.daniellohrey.betterist.db.ProductMongoDb;
 
 import de.daniellohrey.betterist.db.UserProductMongoDb;
+import de.daniellohrey.betterist.model.DbProduct;
 import de.daniellohrey.betterist.model.Product;
 import de.daniellohrey.betterist.dto.ProductDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +28,8 @@ public class ProductService {
     }
 
 
-    public List<Product> listProducts() {
-        return productMongoDb.findAll();
+    public List<DbProduct> listProducts() {
+        return userProductMongoDb.findAll();
     }
 
 
@@ -47,10 +48,8 @@ public class ProductService {
     }
 
 
-    public List<Product> getProductByKeywords(String keywords) {
-        return productMongoDb.findProductsBy_keywordsIsContainingAndLangIs(keywords, "de");
+    public List<Product> getProductByKeywords(String keywords, String id) {
+        return productMongoDb.findProductsBy_keywordsIsContainingAndLangIsAndIdIs(keywords, "de",id);
     }
-
-
 
 }
