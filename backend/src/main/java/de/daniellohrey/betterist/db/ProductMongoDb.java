@@ -10,7 +10,7 @@ public interface ProductMongoDb extends PagingAndSortingRepository<Product, Stri
 
     List<Product> findAll();
 
-    List<Product> findProductsBy_keywordsIsContainingAndLangIs(String keyword, String lang);
+    List<Product> findProductsBy_keywordsIsContainingAndLangIsAndIdIs(String keyword, String lang, String Id);
 
 
 }

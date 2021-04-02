@@ -1,5 +1,6 @@
 package de.daniellohrey.betterist.controller;
 
+import de.daniellohrey.betterist.model.DbProduct;
 import de.daniellohrey.betterist.model.Product;
 import de.daniellohrey.betterist.dto.ProductDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class ProductController {
     }
 
     @GetMapping
-    public List<Product> listProducts() {
+    public List<DbProduct> getUserProductsList() {
         return productService.listProducts();
     }
 
@@ -48,8 +49,9 @@ public class ProductController {
 
 
     @GetMapping("search/{keywords}")
-    public List<Product> findProductByKeyword(@PathVariable String keywords){
-        return productService.getProductByKeywords(keywords);
+    public List<Product> findProductByKeyword(@PathVariable String keywords,String id){
+        return productService.getProductByKeywords(keywords,id);
     }
+
 
 }
