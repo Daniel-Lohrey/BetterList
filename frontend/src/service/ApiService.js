@@ -6,7 +6,7 @@ export const getProductsById = (id) =>
     axios.get(`${productUrl}/${id}`).then(response => response.data)
 
 export const getUserProductsList = () =>
-    axios.get(`${productUrl}`).then(response => response.data)
+    axios.get(productUrl).then(response => response.data)
 
 export const postProduct = (product) =>
     axios.post(productUrl, {

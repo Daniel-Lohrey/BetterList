@@ -1,10 +1,17 @@
 import styled from 'styled-components/macro'
-import {useState} from 'react'
-import {getProductsById, postProduct} from "../service/ApiService";
+import {useEffect, useState} from 'react'
+import {getProductsById, getUserProductsList, postProduct} from "../service/ApiService";
 
 
-export default function SearchProducts({ products, setProducts }) {
+export default function SearchProducts({products , setProducts}) {
     const [search ,setSearch] = useState("")
+
+
+    useEffect(() => {
+        getUserProductsList()
+            .then(setProducts)
+            .catch((error) => console.error(error))
+    }, [])
 
 
     const handleSubmit = (event) => {

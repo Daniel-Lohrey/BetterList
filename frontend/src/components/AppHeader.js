@@ -9,7 +9,7 @@ export default function AppHeader() {
 }
 
 const Header = styled.header`
-  background: var(--text-color, beige);
+  background: beige;
   box-shadow: 0px 2px 4px #333;
   
   h1 {

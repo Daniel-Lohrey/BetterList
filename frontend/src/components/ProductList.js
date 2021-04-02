@@ -5,7 +5,6 @@ import Product from "./Product";
 export default function ProductList({ products }) {
 
 
-
     return (
         <List>
             {products.map((product)=>(
