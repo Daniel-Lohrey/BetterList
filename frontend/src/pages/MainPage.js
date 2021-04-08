@@ -1,20 +1,30 @@
-import AppHeader from "../components/AppHeader";
-import AddProduct from "../components/AddProduct";
-import SearchProducts from "../components/SearchProducts";
+import AddProductWithEAN from "../components/AddProductWithEAN";
 import ProductList from "../components/ProductList";
-import {Route} from "react-router-dom";
 import {useState} from "react";
+import {deleteProduct} from "../service/ApiService";
+import styled from "styled-components/macro";
+
 
 
 export default function MainPage() {
     const [products, setProducts] = useState([])
 
-    return (
-        <>
-            <SearchProducts setProducts={setProducts} products={products}/>
-            <ProductList products={products}/>
+    const deleteUserProduct = (id) => {
+        deleteProduct(id).then(() => {
+            setProducts(
+                products.filter((product) => product.id !== id))
+        })
+    }
 
-        </>
+    return (
+        <Wrapper>
+            <AddProductWithEAN setProducts={setProducts} products={products}/>
+            <ProductList products={products} onDeleteProduct={deleteUserProduct}/>
+        </Wrapper>
     )
 }
 
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-rows: 30fr auto;
+`
