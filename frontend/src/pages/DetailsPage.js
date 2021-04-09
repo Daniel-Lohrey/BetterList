@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {getUserProductsById} from "../service/ApiService";
 import {useParams} from "react-router";
-import {Card, CardContent, IconButton, Typography} from "@material-ui/core";
+import {Card, CardContent, Typography} from "@material-ui/core";
 import styled from "styled-components/macro";
-import CustomizedTables from "../components/Nutrients";
+import Nutrients from "../components/Nutrients";
 
 
 export default function DetailsPage({product}) {
@@ -49,13 +49,10 @@ export default function DetailsPage({product}) {
                         <Typography   gutterBottom><b>Inhaltsstoffe:</b> {productDetails.ingredients_text_de}</Typography>
                     </CardContentOrder>
                     <div><b>Serving by 100g</b></div>
-                    <CustomizedTables />
-
+                    <Nutrients />
                 </CardContent>
         </Card>
-
-
-)
+    )
 }
 
 const CardContentOrder = styled.div`
@@ -66,18 +63,12 @@ const CardContentOrder = styled.div`
     width: 90px;
     height: 50px;
     border-radius: 20%;
-    
   }
   
-  CustomizedTables{
-    margin-top: 20px;
-  }
-
 `
 
 const cardStyle = {
     backgroundColor: "var(--backgroundColorPrimary)",
     borderColor: "var(--text-color, beige)",
     borderStyle: "double"
-
 }

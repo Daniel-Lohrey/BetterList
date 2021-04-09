@@ -4,6 +4,8 @@ import MainPage from "./pages/MainPage";
 import ScrollToTop from "./components/ScrollToTop";
 import DetailsPage from "./pages/DetailsPage";
 import styled from 'styled-components/macro'
+import CustomerList from "./pages/CustomerList";
+
 
 
 function App() {
@@ -20,6 +22,9 @@ function App() {
                   </Route>
                   <Route path ="/products/details/:id"  >
                       <DetailsPage />
+                  </Route>
+                  <Route path ="/products/customer"  >
+                      <CustomerList />
                   </Route>
               </Switch>
           </Router>

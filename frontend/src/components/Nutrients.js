@@ -21,14 +21,13 @@ const StyledTableCell = withStyles((theme) => ({
 }))(TableCell);
 
 
-
 const useStyles = makeStyles({
     table: {
         minWidth: 300,
     },
 });
 
-export default function CustomizedTables({ productDetails }) {
+export default function Nutrients({ productDetails }) {
     const classes = useStyles();
     const [nutrimentsData, setNutrimentsData] = useState([])
     const {id} = useParams();
@@ -59,7 +58,7 @@ export default function CustomizedTables({ productDetails }) {
                             <StyledTableCell >{nutrimentsData.proteins}</StyledTableCell>
             </Table>
         </TableContainer>
-                                )
+    )
 }
 
 

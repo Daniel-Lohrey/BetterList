@@ -7,7 +7,6 @@ export default function ShowImage({product}){
  const [imageUrl , setImageUrl] = useState("")
 
 
-
     useEffect(() => {
         axios({
             method: 'get',
@@ -16,8 +15,6 @@ export default function ShowImage({product}){
             .then(response => setImageUrl(response.data.product.image_small_url))
             .catch((error) => console.error(error))
         }, [])
-
-
 
 
     return (

@@ -30,14 +30,14 @@ export default function Product({ product , onDeleteProduct }) {
                         <ShowImage product={product}/>
                     </CardContentOrder>
                     <CardContentOrder>
-                    <Typography   gutterBottom>Marke: {product.brands}</Typography>
+                    <Typography  gutterBottom>Marke: {product.brands}</Typography>
                     </CardContentOrder>
                 </CardContent>
                 </CardActionArea>
-                <IconButton aria-label="delete" type="button"
-                            className={classes.cancel} >
-                    <DeleteIcon onClick={() => onDeleteProduct(product.id)}
-                                type="button"/>
+                <IconButton aria-label="delete"
+                            className={classes.cancel} onClick={() => onDeleteProduct(product.id)}
+                            type="button">
+                    <DeleteIcon />
                 </IconButton>
             </Card>
         </ListItem>
