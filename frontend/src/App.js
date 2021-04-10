@@ -5,6 +5,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import DetailsPage from "./pages/DetailsPage";
 import styled from 'styled-components/macro'
 import CustomerList from "./pages/CustomerList";
+import WelcomePage from "./pages/WelcomePage";
 
 
 
@@ -15,9 +16,12 @@ function App() {
       <PageLayout>
           <Router>
               <AppHeader />
-              <ScrollToTop />
+
               <Switch>
                   <Route exact path="/">
+                      <WelcomePage />
+                  </Route>
+                  <Route exact path="/products">
                       <MainPage />
                   </Route>
                   <Route path ="/products/details/:id"  >

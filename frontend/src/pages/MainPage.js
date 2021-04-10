@@ -3,6 +3,7 @@ import ProductList from "../components/ProductList";
 import {useState} from "react";
 import {deleteProduct} from "../service/ApiService";
 import styled from "styled-components/macro";
+import ShowNutrientImage from "../components/ShowNutrientImage";
 
 
 

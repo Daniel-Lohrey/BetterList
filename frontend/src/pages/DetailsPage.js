@@ -4,6 +4,7 @@ import {useParams} from "react-router";
 import {Card, CardContent, Typography} from "@material-ui/core";
 import styled from "styled-components/macro";
 import Nutrients from "../components/Nutrients";
+import ShowNutrientImage from "../components/ShowNutrientImage";
 
 
 export default function DetailsPage({product}) {
@@ -25,7 +26,7 @@ export default function DetailsPage({product}) {
                 <CardContent>
                     <CardContentOrder >
                         <Typography variant="h6" component="h5" gutterBottom><b>{productDetails.product_name}</b></Typography>
-                        <img src="/nutri.png" alt="Nutri-Score Image" width={100} />
+                        <img src="/nutri.png"  />
                     </CardContentOrder>
                     <CardContentOrder>
                         <Typography   gutterBottom><b>Marke:</b> {productDetails.brands}</Typography>
@@ -50,6 +51,7 @@ export default function DetailsPage({product}) {
                     </CardContentOrder>
                     <div><b>Serving by 100g</b></div>
                     <Nutrients />
+                    <ShowNutrientImage productDetails={productDetails}/>
                 </CardContent>
         </Card>
     )

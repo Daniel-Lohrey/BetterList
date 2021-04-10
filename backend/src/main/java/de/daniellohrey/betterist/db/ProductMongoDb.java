@@ -1,5 +1,6 @@
 package de.daniellohrey.betterist.db;
 
+
 import de.daniellohrey.betterist.model.Product;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
@@ -10,7 +11,7 @@ public interface ProductMongoDb extends PagingAndSortingRepository<Product, Stri
 
     List<Product> findAll();
 
-    List<Product> findProductsBy_keywordsIsContainingAndLangIsAndIdIs(String keyword, String lang, String Id);
+    List<Product> findProductsBy_keywordsIsContainingAndLangIs(String keyword, String lang);
 
 
 }

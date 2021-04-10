@@ -1,9 +1,10 @@
 import axios from "axios";
 import {useEffect, useState} from "react";
+import styled from "styled-components/macro";
 
 
 
-export default function ShowNutrientImage({product}){
+export default function ShowNutrientImage({product, productDetails}){
     const [nutrientImageUrl , setNutrientImageUrl] = useState("")
 
 
@@ -11,18 +12,27 @@ export default function ShowNutrientImage({product}){
     useEffect(() => {
         axios({
             method: 'get',
-            url: `https://world.openfoodfacts.org/api/v0/product/${product.id}.json`,
+            url: `https://world.openfoodfacts.org/api/v0/product/${productDetails.id}.json`,
         })
-            .then(response => setNutrientImageUrl(response.data.product.image_ingredients_thumb_url))
+            .then(response => setNutrientImageUrl(response.data.product.image_nutrition_url))
             .catch((error) => console.error(error))
-    }, [])
+    }, [productDetails.id])
 
 
     return (
-        <img src={nutrientImageUrl} width={100}  max-height={200}/>
+        <Wrapper>
+            <img src={nutrientImageUrl} onClick={() => nutrientImageUrl()} />
+        </Wrapper>
     )
 }
 
+const Wrapper = styled.image`
+  img {
+    margin-top: 20px;
+    width: 150px;
+    height: 120px;
+    border-radius: 10px 25% 20px;
+  } `
 
 
 

@@ -1,6 +1,5 @@
-import {Card, CardActionArea, CardContent, IconButton, Typography} from "@material-ui/core";
-import ShowImage from "./ShowImage";
-import DeleteIcon from "@material-ui/icons/Delete";
+import {Card, CardContent, Typography} from "@material-ui/core";
+
 import React from "react";
 import styled from "styled-components/macro";
 

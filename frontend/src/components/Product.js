@@ -3,6 +3,7 @@ import {Card, CardActionArea, CardContent, IconButton, makeStyles, Typography} f
 import ShowImage from "./ShowImage";
 import React from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
+import ShowNutrientImage from "./ShowNutrientImage";
 
 
 
@@ -46,12 +47,10 @@ export default function Product({ product , onDeleteProduct }) {
 
 const ListItem = styled.li`
   margin: 3px;
- 
 `
 const CardContentOrder = styled.div`
   display: flex;
   justify-content: space-between;
-
 `
 
 const cardStyle = {

@@ -14,12 +14,12 @@ export default function ShowImage({product}){
         })
             .then(response => setImageUrl(response.data.product.image_small_url))
             .catch((error) => console.error(error))
-        }, [])
+        }, [product.id])
 
 
     return (
         <Wrapper>
-            <img src={imageUrl} width={100}  max-height={200}/>
+            <img src={imageUrl}  />
         </Wrapper>
 
     )
