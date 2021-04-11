@@ -1,5 +1,5 @@
 import {Card, CardContent, Typography} from "@material-ui/core";
-
+import Checkbox from '@material-ui/core/Checkbox';
 import React from "react";
 import styled from "styled-components/macro";
 
@@ -11,14 +11,13 @@ export default function CustomerProduct({productName}) {
             <Card style={cardStyle}>
                 <CardContent>
                     <CardContentOrder>
-                        <Typography variant="h6" component="h5" gutterBottom>{productName}</Typography>
+                        <Typography  gutterBottom>{productName}</Typography>
+                        <Checkbox color="default" />
                     </CardContentOrder>
                 </CardContent>
             </Card>
         </ListItem>
-
     )
-
 }
 
 const ListItem = styled.li`
@@ -29,6 +28,7 @@ const ListItem = styled.li`
 const CardContentOrder = styled.div`
   display: flex;
   justify-content: space-between;
+  
 
 `
 
@@ -37,3 +37,4 @@ const cardStyle = {
     borderRadius: "12px",
     margin: "12px",
 }
+

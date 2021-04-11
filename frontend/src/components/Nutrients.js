@@ -25,9 +25,13 @@ const useStyles = makeStyles({
     table: {
         minWidth: 300,
     },
+    TableHead:{
+        display: "flex",
+        justifyContent: "space-around",
+    }
 });
 
-export default function Nutrients({ productDetails }) {
+export default function Nutrients() {
     const classes = useStyles();
     const [nutrimentsData, setNutrimentsData] = useState([])
     const {id} = useParams();
@@ -42,7 +46,7 @@ export default function Nutrients({ productDetails }) {
     }, [id])
 
     return (
-        <TableContainer component={Paper}>
+        <TableContainer component={Paper} >
             <Table className={classes.table} aria-label="customized table">
                 <TableHead>
                     <TableRow>

@@ -1,9 +1,10 @@
 import styled from "styled-components/macro";
-import {Card, CardActionArea, CardContent, IconButton, makeStyles, Typography} from "@material-ui/core";
 import ShowImage from "./ShowImage";
 import React from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
-import ShowNutrientImage from "./ShowNutrientImage";
+import {Card, CardActionArea, CardContent, IconButton, makeStyles, Typography} from "@material-ui/core";
+
+
 
 
 

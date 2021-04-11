@@ -21,7 +21,7 @@ export default function ShowNutrientImage({product, productDetails}){
 
     return (
         <Wrapper>
-            <img src={nutrientImageUrl} onClick={() => nutrientImageUrl()} />
+            <img src={nutrientImageUrl} alt="Nutrient Image" />
         </Wrapper>
     )
 }

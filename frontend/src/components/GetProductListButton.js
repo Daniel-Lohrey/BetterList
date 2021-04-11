@@ -5,7 +5,6 @@ import ArrowRight from "../icons/ArrowRight";
 export default function GetProductListButton() {
 
     return (
-        <LinkStyled to='/products'>Produktliste<ArrowRight/></LinkStyled>
+        <LinkStyled to='/products'><b>Produktliste</b><ArrowRight/></LinkStyled>
     )
-
 }

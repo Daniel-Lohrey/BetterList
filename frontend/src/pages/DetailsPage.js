@@ -49,8 +49,8 @@ export default function DetailsPage({product}) {
                     <CardContentOrder>
                         <Typography   gutterBottom><b>Inhaltsstoffe:</b> {productDetails.ingredients_text_de}</Typography>
                     </CardContentOrder>
-                    <div><b>Serving by 100g</b></div>
-                    <Nutrients />
+                    <Div ><b>Serving by 100g</b></Div>
+                    <Nutrients  />
                     <ShowNutrientImage productDetails={productDetails}/>
                 </CardContent>
         </Card>
@@ -67,6 +67,12 @@ const CardContentOrder = styled.div`
     border-radius: 20%;
   }
   
+    .MuiCardContent-root > div:nth-child(9) {
+
+      padding-bottom: 0.25em;
+    }
+  
+  
 `
 
 const cardStyle = {
@@ -74,3 +80,7 @@ const cardStyle = {
     borderColor: "var(--text-color, beige)",
     borderStyle: "double"
 }
+
+const Div = styled.div`
+    padding-bottom: 0.4em;
+    `

@@ -13,7 +13,7 @@ export default function ArrowLeft() {
 
 const Arrow = styled(FiChevronLeft)`
 
-  color: #EAE0D5;
+  color: black;
   transform: scale(2.5);
   margin-top: 10px;
 `

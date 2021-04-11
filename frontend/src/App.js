@@ -8,32 +8,31 @@ import CustomerList from "./pages/CustomerList";
 import WelcomePage from "./pages/WelcomePage";
 
 
-
 function App() {
 
 
-  return (
-      <PageLayout>
-          <Router>
-              <AppHeader />
-
-              <Switch>
-                  <Route exact path="/">
-                      <WelcomePage />
-                  </Route>
-                  <Route exact path="/products">
-                      <MainPage />
-                  </Route>
-                  <Route path ="/products/details/:id"  >
-                      <DetailsPage />
-                  </Route>
-                  <Route path ="/products/customer"  >
-                      <CustomerList />
-                  </Route>
-              </Switch>
-          </Router>
-      </PageLayout>
-  )
+    return (
+        <PageLayout>
+            <Router>
+                <ScrollToTop/>
+                <Switch>
+                    <Route exact path="/">
+                        <WelcomePage/>
+                    </Route>
+                    <Route exact path="/products">
+                        <MainPage/>
+                    </Route>
+                    <Route path="/products/details/:id">
+                        <AppHeader/>
+                        <DetailsPage/>
+                    </Route>
+                    <Route path="/products/customer">
+                        <CustomerList/>
+                    </Route>
+                </Switch>
+            </Router>
+        </PageLayout>
+    )
 }
 
 export default App;

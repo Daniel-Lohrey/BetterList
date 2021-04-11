@@ -3,7 +3,8 @@ import ProductList from "../components/ProductList";
 import {useState} from "react";
 import {deleteProduct} from "../service/ApiService";
 import styled from "styled-components/macro";
-import ShowNutrientImage from "../components/ShowNutrientImage";
+import AppHeader from "../components/AppHeader";
+
 
 
 
@@ -19,6 +20,7 @@ export default function MainPage() {
 
     return (
         <Wrapper>
+            <AppHeader/>
             <AddProductWithEAN setProducts={setProducts} products={products}/>
             <ProductList products={products} onDeleteProduct={deleteUserProduct}/>
         </Wrapper>

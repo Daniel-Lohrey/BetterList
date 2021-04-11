@@ -13,6 +13,6 @@ export default function ArrowRight() {
 
 const Arrow = styled(FiChevronRight)`
   
-  color: #EAE0D5;
+  color: black;
   transform: scale(1.7);
 `

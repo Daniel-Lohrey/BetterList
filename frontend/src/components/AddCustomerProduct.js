@@ -5,27 +5,38 @@ import {useState} from "react";
 
 
 
+
+
 export default function AddCustomerProduct({onAdd}) {
     const [productName, setProductName] = useState("")
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        onAdd(productName);
+        setProductName("")
+    }
+
+    const handleChange = (changeEvent) => {
+        setProductName(changeEvent.target.value)
+
+    }
 
 
 
     return (
-            <ProductContainer onSubmit={()=> onAdd(productName)} >
+            <ProductContainer  onSubmit={handleSubmit} >
                 <input
                     placeholder="Merke dir..."
                     type="text"
                     value={productName}
-                    onChange={(event) => setProductName(event.target.value)}
+                    onChange={handleChange}
                 />
-                <IconButton type="submit"  >
+                <IconButton type="submit" onSubmit={handleSubmit} >
                     <AddCircleOutlineIcon />
                 </IconButton>
             </ProductContainer>
-
     )
 }
-
 
 const ProductContainer = styled.form`
   padding-left: 20px;

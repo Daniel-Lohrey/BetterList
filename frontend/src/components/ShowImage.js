@@ -19,9 +19,8 @@ export default function ShowImage({product}){
 
     return (
         <Wrapper>
-            <img src={imageUrl}  />
+            <img src={imageUrl} alt="Product Image" />
         </Wrapper>
-
     )
 }
 

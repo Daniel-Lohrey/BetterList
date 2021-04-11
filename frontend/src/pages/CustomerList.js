@@ -3,6 +3,7 @@ import styled from "styled-components/macro";
 import AddCustomerProduct from "../components/AddCustomerProduct";
 import {useState} from "react";
 import CustomerProduct from "../components/CustomerProduct";
+import AppHeader from "../components/AppHeader";
 
 
 
@@ -17,6 +18,7 @@ export default function CustomerList() {
 
     return (
         <Wrapper>
+            <AppHeader/>
             <AddCustomerProduct onAdd={onAdd}/>
             <List>
                 {productNames.map((productName)=>(
