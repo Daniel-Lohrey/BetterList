@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import BackButton from "../icons/BackButton";
 
 export default function AppHeader() {
 
@@ -7,12 +8,13 @@ export default function AppHeader() {
     return (
         <Header>
             <h1>BetterList</h1>
+            <BackButton />
         </Header>
     )
 }
 
 const Header = styled.header`
-  background: #EAE0D5;
+  background: #EAE0D5 ;
   box-shadow: 0px 2px 2px #333;
   
   

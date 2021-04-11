@@ -38,7 +38,7 @@ export default function AddProductWithEAN({products , setProducts}) {
                     value={search}
                     onChange={handleChange}
                 />
-            <IconButton onClick={handleSubmit} disabled={!search}>
+            <IconButton onClick={handleSubmit} disabled={!search} >
                 <AddCircleOutlineIcon />
             </IconButton>
         </ProductContainer>
@@ -50,17 +50,18 @@ const ProductContainer = styled.form`
   padding-right: 10px;
   padding-top: 6px;
   display: flex;
-  
+  color: black;
   
   input {
     flex-grow: 2;
-    border-color: var(--primary-color);
-    border-width: 1px;
+    border-color: black;
+    border-width: 2px;
     border-radius: 4px;
     padding-left: 10px;
     margin-bottom: 10px;
     margin-top: 10px;
-    background: transparent;
+    background: #EAE0D5;
+    opacity: 0.8;
     
   }
 `

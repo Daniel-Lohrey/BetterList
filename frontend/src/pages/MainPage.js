@@ -20,7 +20,7 @@ export default function MainPage() {
 
     return (
         <Wrapper>
-            <AppHeader/>
+            <AppHeader />
             <AddProductWithEAN setProducts={setProducts} products={products}/>
             <ProductList products={products} onDeleteProduct={deleteUserProduct}/>
         </Wrapper>

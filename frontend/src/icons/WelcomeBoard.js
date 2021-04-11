@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
-import GetStartedButton from "../components/GetStartedButton";
-import GetProductListButton from "../components/GetProductListButton";
+import GetStartedButton from "./GetStartedButton";
+import GetProductListButton from "./GetProductListButton";
 
 
 export default function WelcomeBoard() {
@@ -10,8 +10,8 @@ export default function WelcomeBoard() {
             <section>
                 <h2>BetterList</h2>
                 <h4> Eine bessere Einkaufsliste,
-                    in der man sich auch einen direkten Überblick über weitere Details,
-                    sowie Nährwertangaben des Produktes verschaffen kann.</h4>
+                    in der man sich einen direkten Überblick über weitere Informationen,
+                    sowie Nährwertangaben, Nutriscore oder Novagruppe des Produktes verschaffen kann.</h4>
             </section>
             <GetStartedButton />
             <GetProductListButton />
@@ -36,8 +36,11 @@ const Container = styled.div`
   justify-items: end;
   
   section{
-    margin-top: 50px;
-    padding-bottom: 90px;
+    top: 20px;
+  }
+  
+  GetStartedButton{
+    position: absolute;
   }
 
 

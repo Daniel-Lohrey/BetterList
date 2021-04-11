@@ -45,10 +45,11 @@ const ProductContainer = styled.form`
   display: flex;
   
   
+  
   input {
     flex-grow: 2;
-    border-color: var(--primary-color);
-    border-width: 1px;
+    border-color: black;
+    border-width: 1.5px;
     border-radius: 4px;
     padding-left: 10px;
     margin-bottom: 10px;
@@ -57,15 +58,4 @@ const ProductContainer = styled.form`
     
   }
   
-  button {
-    font-size: 0.8em;
-    font-color: #fff;
-    flex-grow: 0.2;
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    border-width: 1px;
-    border-radius: 4px;
-    padding: 10px;
-    margin: 10px;
-  }
 `

@@ -15,5 +15,5 @@ const Arrow = styled(FiChevronLeft)`
 
   color: black;
   transform: scale(2.5);
-  margin-top: 10px;
+  margin: 0px;
 `

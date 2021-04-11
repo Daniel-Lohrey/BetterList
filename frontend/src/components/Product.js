@@ -56,6 +56,7 @@ const CardContentOrder = styled.div`
 
 const cardStyle = {
     backgroundColor: "var(--text-color, #EAE0D5)",
+    opacity: 1,
     borderRadius: "12px",
     margin: "12px",
 }

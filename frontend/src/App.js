@@ -1,11 +1,10 @@
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
-import AppHeader from "./components/AppHeader";
 import MainPage from "./pages/MainPage";
-import ScrollToTop from "./components/ScrollToTop";
-import DetailsPage from "./pages/DetailsPage";
 import styled from 'styled-components/macro'
-import CustomerList from "./pages/CustomerList";
+import CustomerPage from "./pages/CustomerPage";
 import WelcomePage from "./pages/WelcomePage";
+import DetailsPage from "./pages/DetailsPage";
+import Image from "./assets/Lebensmittel.jpg"
 
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
     return (
         <PageLayout>
             <Router>
-                <ScrollToTop/>
                 <Switch>
                     <Route exact path="/">
                         <WelcomePage/>
@@ -22,12 +20,11 @@ function App() {
                     <Route exact path="/products">
                         <MainPage/>
                     </Route>
-                    <Route path="/products/details/:id">
-                        <AppHeader/>
-                        <DetailsPage/>
+                    <Route exact path="/products/details/:id">
+                        <DetailsPage />
                     </Route>
-                    <Route path="/products/customer">
-                        <CustomerList/>
+                    <Route exact path="/products/customer">
+                        <CustomerPage/>
                     </Route>
                 </Switch>
             </Router>
@@ -37,10 +34,11 @@ function App() {
 
 export default App;
 
-
 const PageLayout = styled.div`
-  display: grid;
-  grid-template-rows: auto 1fr;
-  background: #FFFAF0;
-  height: auto;
+  height: 120vh;
+  background: url(${Image});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 `

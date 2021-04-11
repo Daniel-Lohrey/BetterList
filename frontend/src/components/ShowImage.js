@@ -25,7 +25,7 @@ export default function ShowImage({product}){
 }
 
 const Wrapper = styled.image`
-  img {
+  Img {
     width: 85px;
     height: 70px;
     border-radius: 10px 25% 20px;

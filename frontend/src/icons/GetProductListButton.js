@@ -1,5 +1,5 @@
-import LinkStyled from "../icons/LinkedStyled";
-import ArrowRight from "../icons/ArrowRight";
+import LinkStyled from "./LinkedStyled";
+import ArrowRight from "./ArrowRight";
 
 
 export default function GetProductListButton() {

@@ -7,7 +7,7 @@ import AppHeader from "../components/AppHeader";
 
 
 
-export default function CustomerList() {
+export default function CustomerPage() {
     const [productNames, setProductNames] = useState([]);
 
     const onAdd = (productName)=> {
@@ -30,13 +30,15 @@ export default function CustomerList() {
 }
 
 const Wrapper = styled.div`
-  display: grid;
-  grid-template-rows: 30fr auto;
+  height: 200vh;
+  background: url('Lebensmittel.jpg') fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `
 
 const List = styled.ul`
   list-style: none;
   padding: 2px;
   margin: 1px;
-  color: antiquewhite;
 `
