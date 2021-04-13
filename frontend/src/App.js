@@ -41,4 +41,8 @@ const PageLayout = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  margin: 0px;
+  padding: 0px;
+  
+  
 `

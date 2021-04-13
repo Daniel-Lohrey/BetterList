@@ -30,7 +30,7 @@ const Container = styled.div`
   opacity: 0.85;
   padding: 20px;
   position: absolute;
-  bottom: 300px;
+  bottom: 200px;
   margin: 15px;
   line-height: 1.5;
   justify-items: end;

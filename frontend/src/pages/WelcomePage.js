@@ -12,5 +12,6 @@ export default function WelcomePage() {
 }
 
 const Wrapper = styled.div`
-    
+  margin: 0px;
+  padding: 0px;
   `

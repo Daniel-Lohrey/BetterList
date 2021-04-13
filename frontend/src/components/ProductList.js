@@ -16,7 +16,7 @@ export default function ProductList({ products, onDeleteProduct }) {
 
 const List = styled.ul`
   list-style: none;
-  padding: 2px;
-  margin: 1px;
+  padding: 0px;
+  margin: 0px;
   color: antiquewhite;
 `

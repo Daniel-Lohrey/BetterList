@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import ShowImage from "./ShowImage";
+import ShowProduct from "./ShowProduct";
 import React from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
 import {Card, CardActionArea, CardContent, IconButton, makeStyles, Typography} from "@material-ui/core";
@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
     cancel: {
         width: "auto",
         color:"var(--borderColor)",
-        marginLeft: 330,
+        marginLeft: 300,
         position: "absolute",
         marginBlock: -50
     },
@@ -29,7 +29,7 @@ export default function Product({ product , onDeleteProduct }) {
                 <CardContent>
                     <CardContentOrder >
                         <Typography variant="h6" component="h5" gutterBottom>{product.product_name}</Typography>
-                        <ShowImage product={product}/>
+                        <ShowProduct product={product}/>
                     </CardContentOrder>
                     <CardContentOrder>
                     <Typography  gutterBottom>Marke: {product.brands}</Typography>
@@ -47,7 +47,7 @@ export default function Product({ product , onDeleteProduct }) {
 }
 
 const ListItem = styled.li`
-  margin: 3px;
+  
 `
 const CardContentOrder = styled.div`
   display: flex;
@@ -56,7 +56,6 @@ const CardContentOrder = styled.div`
 
 const cardStyle = {
     backgroundColor: "var(--text-color, #EAE0D5)",
-    opacity: 1,
     borderRadius: "12px",
     margin: "12px",
 }

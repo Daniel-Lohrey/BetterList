@@ -14,8 +14,5 @@ export default function DetailsPage() {
 }
 
 const Wrapper = styled.div`
-  display: grid;
-  grid-template-rows: 30fr auto;
-  
   
   `

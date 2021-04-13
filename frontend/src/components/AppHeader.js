@@ -7,8 +7,8 @@ export default function AppHeader() {
 
     return (
         <Header>
-            <h1>BetterList</h1>
             <BackButton />
+            <h1>BetterList</h1>
         </Header>
     )
 }

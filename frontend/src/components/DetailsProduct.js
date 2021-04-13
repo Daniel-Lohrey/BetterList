@@ -4,7 +4,7 @@ import {useParams} from "react-router";
 import {Card, CardContent, Typography} from "@material-ui/core";
 import styled from "styled-components/macro";
 import Nutrients from "./Nutrients";
-import ShowNutrientImage from "./ShowNutrientImage";
+import ShowNutrientsPicture from "./ShowNutrientsPicture";
 
 
 export default function DetailsProduct({product}) {
@@ -25,7 +25,7 @@ export default function DetailsProduct({product}) {
                 <CardContent>
                     <CardContentOrder >
                         <Typography variant="h6" component="h5" gutterBottom><b>{productDetails.product_name}</b></Typography>
-                        <img src="/nutri.png"  />
+                        <img src="/nutri.png" alt="Nutri-Score-Table"/>
                     </CardContentOrder>
                     <CardContentOrder>
                         <Typography   gutterBottom><b>Marke:</b> {productDetails.brands}</Typography>
@@ -50,20 +50,22 @@ export default function DetailsProduct({product}) {
                     </CardContentOrder>
                     <Div ><b>Serving by 100g</b></Div>
                     <Nutrients  />
-                    <ShowNutrientImage productDetails={productDetails}/>
+                    <ShowNutrientsPicture productDetails={productDetails}/>
                 </CardContent>
         </Card>
     )
 }
 
 const CardContentOrder = styled.div`
-  display: flex;
+  display: grid;
   justify-content: space-between;
   
   img {
     width: 90px;
     height: 50px;
-    border-radius: 20%;
+    position: absolute;
+    padding-left: 250px;
+    padding-top: 40px;
   }
   
     .MuiCardContent-root > div:nth-child(9) {

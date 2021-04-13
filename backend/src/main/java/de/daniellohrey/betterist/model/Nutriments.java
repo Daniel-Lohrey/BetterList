@@ -17,7 +17,6 @@ public class Nutriments {
 
 
     private String energy_serving;
-    private String carbohydrates;
     private String proteins;
     private String carbohydrates_value;
     private String fat_serving;

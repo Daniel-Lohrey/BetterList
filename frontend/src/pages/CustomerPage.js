@@ -30,15 +30,12 @@ export default function CustomerPage() {
 }
 
 const Wrapper = styled.div`
-  height: 200vh;
-  background: url('Lebensmittel.jpg') fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  margin: 0px;
+  padding: 0px;
 `
 
 const List = styled.ul`
   list-style: none;
-  padding: 2px;
-  margin: 1px;
+  padding: 0px;
+  margin: 0px;
 `

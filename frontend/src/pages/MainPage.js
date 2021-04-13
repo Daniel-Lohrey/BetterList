@@ -8,6 +8,7 @@ import AppHeader from "../components/AppHeader";
 
 
 
+
 export default function MainPage() {
     const [products, setProducts] = useState([])
 
@@ -28,6 +29,6 @@ export default function MainPage() {
 }
 
 const Wrapper = styled.div`
-  display: grid;
-  grid-template-rows: 30fr auto;
+  margin: 0px;
+  padding: 0px;
 `

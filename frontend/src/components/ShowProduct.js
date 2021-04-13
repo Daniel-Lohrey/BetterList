@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import styled from "styled-components/macro";
 
 
-export default function ShowImage({product}){
+export default function ShowProduct({product}){
  const [imageUrl , setImageUrl] = useState("")
 
 
@@ -19,12 +19,12 @@ export default function ShowImage({product}){
 
     return (
         <Wrapper>
-            <img src={imageUrl} alt="Product Image" />
+            <img src={imageUrl} alt="Product" />
         </Wrapper>
     )
 }
 
-const Wrapper = styled.image`
+const Wrapper = styled.div`
   Img {
     width: 85px;
     height: 70px;

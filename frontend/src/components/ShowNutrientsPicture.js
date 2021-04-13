@@ -4,7 +4,7 @@ import styled from "styled-components/macro";
 
 
 
-export default function ShowNutrientImage({product, productDetails}){
+export default function ShowNutrientsPicture({ productDetails}){
     const [nutrientImageUrl , setNutrientImageUrl] = useState("")
 
 
@@ -21,12 +21,12 @@ export default function ShowNutrientImage({product, productDetails}){
 
     return (
         <Wrapper>
-            <img src={nutrientImageUrl} alt="Nutrient Image" />
+            <img src={nutrientImageUrl} alt="Nutrient" />
         </Wrapper>
     )
 }
 
-const Wrapper = styled.image`
+const Wrapper = styled.div`
   img {
     margin-top: 20px;
     width: 150px;
