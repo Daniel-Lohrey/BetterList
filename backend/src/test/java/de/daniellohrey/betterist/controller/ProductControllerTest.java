@@ -55,30 +55,30 @@ class ProductControllerTest {
     @DisplayName("Get api/product should return a list of products")
     public void getMappingShouldReturnListOfProducts() {
         //Given
-        productMongoDb.save(Product.builder()
+        userProductMongoDb.save(DbProduct.builder()
                 .id("12345")
                 .product_name("Product1")
                 .brands("Milbona")
                 .build());
-        productMongoDb.save(Product.builder()
+        userProductMongoDb.save(DbProduct.builder()
                 .id("0001")
                 .product_name("Product2")
                 .brands("Milka")
                 .build());
 
         //WHEN
-        ResponseEntity<Product[]> response = testRestTemplate.getForEntity(getUrl(), Product[].class);
+        ResponseEntity<DbProduct[]> response = testRestTemplate.getForEntity(getUrl(), DbProduct[].class);
 
         //Then
 
         assertThat(response.getStatusCode(), Matchers.is(HttpStatus.OK));
         assertThat(response.getBody(), arrayContainingInAnyOrder(
-                Product.builder()
+                DbProduct.builder()
                         .id("12345")
                         .product_name("Product1")
                         .brands("Milbona")
                         .build(),
-                Product.builder()
+                DbProduct.builder()
                         .id("0001")
                         .product_name("Product2")
                         .brands("Milka")
