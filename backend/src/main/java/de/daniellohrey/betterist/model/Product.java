@@ -33,6 +33,9 @@ public class Product {
     private String quantity;
     private List<String> _keywords;
     private String lang;
+    private List<String> additives_prev_original_tags;
+    private List<String> allergens_tags;
+
 
 
 
@@ -41,6 +44,14 @@ public class Product {
         return DbProduct.builder()
                 .id(id)
                 .product_name(product_name)
+                .brands(brands)
+                .nutriscore_grade(nutriscore_grade)
+                .nova_group(nova_group)
+                .nutriments(nutriments)
+                .ingredients_text_de(ingredients_text_de)
+                .quantity(quantity)
+                .additives_prev_original_tags(additives_prev_original_tags)
+                .allergens_tags(allergens_tags)
                 .build();
     }
 

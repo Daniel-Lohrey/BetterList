@@ -30,6 +30,12 @@ public class ProductController {
         return productService.listProducts();
     }
 
+    @GetMapping("details/{id}")
+    public DbProduct findUserProductById(@PathVariable String id){
+        return productService.getUserProductById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product could not be found"));
+    }
+
     @GetMapping("{id}")
     public Product findProductById(@PathVariable String id) {
         return productService.getProductById(id)
@@ -50,7 +56,7 @@ public class ProductController {
 
     @GetMapping("search/{keywords}")
     public List<Product> findProductByKeyword(@PathVariable String keywords,String id){
-        return productService.getProductByKeywords(keywords,id);
+        return productService.getProductByKeywords(keywords);
     }
 
 

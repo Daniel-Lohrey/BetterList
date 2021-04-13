@@ -48,8 +48,11 @@ public class ProductService {
     }
 
 
-    public List<Product> getProductByKeywords(String keywords, String id) {
-        return productMongoDb.findProductsBy_keywordsIsContainingAndLangIsAndIdIs(keywords, "de",id);
+    public List<Product> getProductByKeywords(String keywords) {
+        return productMongoDb.findProductsBy_keywordsIsContainingAndLangIs(keywords, "de");
     }
 
+    public Optional<DbProduct> getUserProductById(String id) {
+        return userProductMongoDb.findById(id);
+    }
 }
